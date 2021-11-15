@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(211, 232, 250);
+    font-family: sans-serif;
+}
+.table{
+    margin: bottom 20px;
+    border:2px solid #acc;
+    padding:2px;
+    font-family: sans-serif;
+    color: #364f6b;
+}
+h1{
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: #364f6b;
+  width: 100%;
+}
+h2{
+    font-family: sans-serif;
+      font-weight: 800;
+      font-size: 25px;
+      margin-bottom: 20px;
+      color: #364f6b;
+      width: 100%;
+      line-height: 50px;
+    }

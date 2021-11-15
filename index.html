@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Required meta tags-->
+	<meta charset="UTF-8">
+	<title>ProjectUTS</title>
+
+    <!--Bootstrap CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <link rel="stylesheet" href="style.css">
+    <linkhref="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</head>
+<body>
+	<div id="app">
+        <div class="container">
+            <!--gambar-->
+            <image-new></image-new>
+            
+            <!--header-->
+            <header-new></header-new>
+            <h2>Catatan Harian</h2>
+
+            <!--kolom bulan-->
+            <div class="form-floating mb-3">
+                <input type="text" v-model="bulan" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Bulan</label>
+            </div>
+
+            <!--Input Text-->
+            <div class="form-floating mb-3">
+                <input type="text" v-model="subject" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Subject</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" v-model="textNote" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Text Note</label>
+            </div>
+            <button @click="submitTask" class="btn btn-secondary justify-content-center">Submit</button>
+            
+
+            <!--tabel form-->
+            <table class="table mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Bulan</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Teks Note</th>
+                        <th scope="col">Hapus</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(task, index) in tasks" :key="index">
+                        <td>{{ task.bulan }}</td>
+                        <td>{{ task.subject }}</td>
+                        <td>{{ task.textNote }}</td>
+                        <td>
+                            <button @click="deleteTask(index)" class="btn btn-danger text-center rounded-5">Hapus</button> 
+                        </td>
+                        <td>
+                            <button @click="editTask(index)" class="btn btn-warning text-center rounded-5">Edit</button> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--import app VUE-->
+    <script src="./main.js"></script>
+
+    <!--import components VUE-->
+    <script src="./components/image.js"></script>
+    <script src="./components/header.js"></script>
+
+    <!--Mount app VUE-->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+    
+</body>
+</html>
